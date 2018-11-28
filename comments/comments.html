@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Comments</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Kirang+Haerang" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media.css">
+    <script src="../js/data.js"></script>
+    <script src="../js/breadPath.js"></script>
+</head>
+<body>
+    <a href="test/testing.html" id="testingLink">Move to the testing page</a>
+    <h3>comments</h3>
+    <div id="blockComments"></div>
+    <script>
+        function printComments(obj) {
+            var parent = document.getElementById("blockComments");
+            var currentPage = obj.page;
+            var i = currentPage * 10 - 1 * 10;
+            var finish = currentPage * 10;
+            for (; i < obj.arr.length && i < finish ; i++){
+                var wrapper_block = document.createElement("div");
+                var leftBlock = document.createElement("div");
+                var rightBlock = document.createElement("div");
+                var name = document.createElement("p");
+                name.innerText = obj.arr[i].name;
+                leftBlock.appendChild(name);
+                var time = document.createElement("p");
+                time.innerText = obj.arr[i].time;
+                leftBlock.appendChild(time);
+                var text = document.createElement("p");
+                text.innerText = obj.arr[i].text;
+                rightBlock.appendChild(text);
+                wrapper_block.appendChild(leftBlock);
+                wrapper_block.appendChild(rightBlock);
+                parent.insertBefore(wrapper_block, parent.firstChild);
+            }
+            makeButtons(objComments);
+        }
+        printComments(objComments);
+
+        function clickPage(e) {
+            deleteObj("blockComments", "#blockComments > div");
+            objComments.page = +e.target.innerText;
+            printComments(objComments);
+        }
+
+        function deleteObj(parentSelector, childrenSelector) {
+            var parent = document.getElementById(parentSelector);
+            var children = document.querySelectorAll(childrenSelector);
+            for (var i = 0; i < children.length; i++)
+                parent.removeChild(children[i]);
+        }
+
+        function makeButtons(obj) {
+            if (document.querySelectorAll("#blockComments > button").length)
+                deleteObj("blockComments", "#blockComments > button");
+            var parent = document.getElementById("blockComments");
+            var currentPage = obj.page;
+            var current = document.createElement("button");
+            current.innerText = obj.page;
+            current.classList.add("active");
+            parent.appendChild(current);
+            if (currentPage > 1)
+            {
+                var previous = document.createElement("button");
+                previous.innerText = currentPage - 1;
+                parent.insertBefore(previous, current);
+            }
+            var maxPages = Math.ceil(obj.arr.length / 10);
+            current.innerText = obj.page;
+            if (currentPage + 1 <= maxPages)
+            {
+                var next = document.createElement("button");
+                next.innerText = currentPage + 1;
+                parent.appendChild(next);
+            }
+            addResponsibleAgent();
+        }
+
+        function addResponsibleAgent() {
+            var buttons = document.querySelectorAll("#blockComments > button");
+            for (var i = 0; i < buttons.length; i++)
+                buttons[i].addEventListener("click", clickPage);
+        }
+
+        makeBreadPath();
+        breadChain();
+    </script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RESTARAUNT</title>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Kirang+Haerang" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+    <script src="js/data.js"></script>
+    <script src="js/breadPath.js"></script>
+    <script src="js/createCookies.js"></script>
+</head>
+<body>
+    <header>
+        <!--CAROUSEL-->
+        <div id="carousel">
+            <span class="arrows previous" onclick="move(-1)">&#60;</span>
+            <span class="arrows next" onclick="move(1)">&#62;</span>
+
+            <div class="dots_wrapper">
+                <span class="dots active" onclick="pressTheDot(1)"></span>
+                <span class="dots" onclick="pressTheDot(2)"></span>
+                <span class="dots" onclick="pressTheDot(3)"></span>
+            </div>
+        </div>
+
+        <div id="menu_wrapper">
+            <span id="logo">HOMELIKE SPOT</span>
+
+            <!--DROP DOWN MENU FOR MOBILE-->
+            <span id="menu_open" onclick="rollDown()"><i class="fas fa-arrow-circle-down"></i></span>
+
+            <!--MENU-->
+            <nav>
+                <span id="menu_close" onclick="rollUp()"><i class="fas fa-arrow-circle-up"></i></span>
+                <ul id="navigation">
+                    <li><a href="#reservation" onclick="fly(event)">TABLES<em>RESERVE</em></a></li>
+                    <li class="list_item_border"></li>
+                    <li><a href="#">WHO ARE WE? <em>ABOUT US</em></a></li>
+                    <li class="list_item_border"></li>
+                    <li id="nav_item_menu"><a href="#">YUMMY<em>MENU</em></a>
+                        <ul id="nav_item_menu_list">
+                            <li><a href="#burger" onclick="fly(event)">BURGERS</a></li>
+                            <li><a href="#dessert" onclick="fly(event)">DESSERTS</a></li>
+                            <li><a href="#drink" onclick="fly(event)">DRINKS</a></li>
+                        </ul>
+                    </li>
+                    <li class="list_item_border"></li>
+                    <li><a href="comments/comments.html">IMPRESSIONS<em>COMMENTS</em></a></li>
+                    <li class="list_item_border"></li>
+                    <li><a href="#footer" onclick="fly(event)">GET IN TOUCH<em>CONTACTS</em></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!--MAIN BLOCK-->
+    <div class="content">
+        <div id="burger">
+            <h3>BURGERS</h3>
+            <p>
+                <span data-target="burger" onclick="sortMenu(2, JSON.parse(menuForBurgers), event)">&#8595; </span>
+                <span data-target="burger" onclick="sortMenu(1, JSON.parse(menuForBurgers), event)">&#8593;</span>
+                <span> Filter:
+                    <select name="filter" id="burger_choice" onchange="filterMenu(JSON.parse(menuForBurgers), 'burger', 'burger_choice')">
+                        <option value="all" selected>all</option>
+                        <option value="chicken">chicken</option>
+                        <option value="turkey">turkey</option>
+                        <option value="pork">pork</option>
+                        <option value="beef">beef</option>
+                        <option value="vegan">vegan</option>
+                    </select>
+                </span>
+            </p>
+        </div>
+        <div id="dessert">
+            <h3>DESSERTS</h3>
+            <p>
+                <span data-target="dessert" onclick="sortMenu(2, JSON.parse(menuForDesserts), event)">&#8595; </span>
+                <span data-target="dessert" onclick="sortMenu(1, JSON.parse(menuForDesserts), event)">&#8593;</span>
+                <span> Filter:
+                    <select name="filter" id="dessert_choice" onchange="filterMenu(JSON.parse(menuForDesserts), 'dessert', 'dessert_choice')">
+                        <option value="all" selected>all</option>
+                        <option value="cake">cake</option>
+                        <option value="brownie">brownie</option>
+                        <option value="cheese">cheese cake</option>
+                    </select>
+                </span>
+            </p>
+        </div>
+        <div id="drink">
+            <h3>DRINKS</h3>
+            <div id="drinks_wrapper">
+                <div><img data-img="cola" src="img/d/cola.jpg" alt="cola" onclick="showFullSizeDrinkImg(event)"></div>
+                <div><img data-img="sprite" src="img/d/sprite.jpg" alt="sprite" onclick="showFullSizeDrinkImg(event)"></div>
+                <div><img data-img="pepper" src="img/d/pepper.jpg" alt="pepper" onclick="showFullSizeDrinkImg(event)"></div>
+                <div><img data-img="mountain" src="img/d/mountain.jpg" alt="mountain" onclick="showFullSizeDrinkImg(event)"></div>
+                <div><img data-img="mirinda" src="img/d/mirinda.jpg" alt="mirinda" onclick="showFullSizeDrinkImg(event)"></div>
+                <div><img data-img="fanta" src="img/d/fanta.jpg" alt="fanta" onclick="showFullSizeDrinkImg(event)"></div>
+            </div>
+                <div id="modal_views">
+                    <div id="cola">
+                        <span><i class="fas fa-times drinks_cross" onclick="deleteFullDrinkImg(event)"></i></span>
+                        <div></div>
+                    </div>
+                    <div id="sprite">
+                        <span><i class="fas fa-times drinks_cross" onclick="deleteFullDrinkImg(event)"></i></span>
+                        <div></div>
+                    </div>
+                    <div id="pepper">
+                        <span><i class="fas fa-times drinks_cross" onclick="deleteFullDrinkImg(event)"></i></span>
+                        <div></div>
+                    </div>
+                    <div id="mountain">
+                        <span><i class="fas fa-times drinks_cross" onclick="deleteFullDrinkImg(event)"></i></span>
+                        <div></div>
+                    </div>
+                    <div id="mirinda">
+                        <span><i class="fas fa-times drinks_cross" onclick="deleteFullDrinkImg(event)"></i></span>
+                        <div></div>
+                    </div>
+                    <div id="fanta">
+                        <span><i class="fas fa-times drinks_cross" onclick="deleteFullDrinkImg(event)"></i></span>
+                        <div></div>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <!--RESERVE THE TABLE-->
+    <div id="reservation">
+        <h3>reservation</h3>
+        <form onsubmit="makeReservation(event); return false">
+        <input type="date" id="reservationDate" placeholder="yyyy.mmmm.dddd" required>
+        <select name="time" id="reservationTime">
+            <option value="10">10.00</option>
+            <option value="11">11.00</option>
+            <option value="12">12.00</option>
+            <option value="13">13.00</option>
+            <option value="14">14.00</option>
+            <option value="15">15.00</option>
+            <option value="16">16.00</option>
+            <option value="17">17.00</option>
+            <option value="18">18.00</option>
+            <option value="19">19.00</option>
+            <option value="20">20.00</option>
+            <option value="21">21.00</option>
+            <option value="22">22.00</option>
+        </select>
+        <input id="submitReservationButton" type="submit" value="choose day and time">
+        </form>
+        <div id="resWrapper">
+            <div id="tables"></div>
+            <div id="reserves"></div>
+        </div>
+    </div>
+
+    <footer id="footer">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2541.519350179539!2d30.48517675104931!3d50.43142629651623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cee98df85793%3A0xd6e05103bfa88daa!2z0YPQuy4g0JrRg9C00YDRj9GI0L7QstCwLCAxNNCRLCDQmtC40LXQsiwgMDIwMDA!5e0!3m2!1sru!2sua!4v1540242322106" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <div>
+            <h3>contacts</h3>
+            <p>epamsystems@gmail.com</p>
+            <p>044 111 22 33</p>
+                <a href="https://twitter.com/EPAMSYSTEMS"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.facebook.com/EPAM.Global"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com/company/4972/"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </footer>
+    <script src="js/main_code.js"></script>
+</body>
+</html>

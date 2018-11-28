@@ -1,0 +1,258 @@
+@media only screen and (min-width:  1024px) and (max-width: 1439px) {
+    #logo {
+        height: 100%;
+        user-select: none;
+        font-size: 2em;
+        float: left;
+        padding: 25px 25px;
+        color: #f6cf32;
+    }
+
+    #navigation > li {
+        width: 150px;
+        float: left;
+    }
+
+    .tableSixWrapper > div {
+        justify-content: space-around;
+        margin: 50px 5px 0;
+    }
+
+    #reserves > p {
+        font-size: 1em;
+        padding: 10px 0 0 10px;
+    }
+
+    #drinks_wrapper {
+        justify-content: space-around;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px)
+{
+
+    #menu_wrapper{
+        position: static;
+        text-align: center;
+    }
+    nav{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background-color: black;
+        opacity: 0.75;
+    }
+
+    #navigation > li{
+        position: relative;
+        height: 100px;
+        user-focus: none;
+    }
+    #navigation > li:first-child{
+        margin-top: 50px;
+    }
+
+    .list_item_border{
+        display: none;
+    }
+    #nav_item_menu:hover #nav_item_menu_list{
+        display: block;
+        position: absolute;
+        top: -50%;
+        left: 100%;
+    }
+
+    #logo{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        pointer-events: none;
+    }
+    #navigation{
+        float: none;
+    }
+
+    #navigation > li{
+        float: none
+    }
+    .next, .previous{
+        display: none;
+    }
+    #burger > div > div:last-child p{
+        padding: 0 15px;
+    }
+    .tableSixWrapper > div{
+        margin:  50px 10px 0;
+    }
+    #modal_views > div:first-child > div{
+        background-size: 50%;
+    }
+
+    #modal_views > div:nth-of-type(2)> div{
+        background-size: 70%;
+    }
+
+    #modal_views > div:nth-of-type(3)> div{
+        background-size: 50%;
+    }
+    #modal_views > div:nth-of-type(4)> div{
+        background-size: 70%;
+    }
+
+    #modal_views > div:nth-of-type(5)> div{
+        background-size: 70%;
+    }
+
+    #modal_views > div:last-child > div{
+        background-size: 70%;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px)
+{
+    #burger > div{
+        display: block;
+    }
+    #burger > div > div:first-child{
+        width: 100%;
+    }
+    #burger > div > div:last-child{
+        width: 100%;
+    }
+    #dessert > div{
+        display: block;
+    }
+    #dessert > div > div:first-child{
+        width: 100%;
+    }
+    #dessert > div > div:last-child{
+        width: 100%;
+    }
+
+    #drinks_wrapper > div{
+        margin: 10px auto;
+    }
+
+    footer{
+        display: block;
+    }
+    footer > iframe{
+        width: 100%;
+        margin: 0;
+    }
+    footer > div{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    #reservation{
+        display: none;
+    }
+
+    #menu_wrapper{
+        position: static;
+        text-align: center;
+    }
+    nav{
+        position: absolute;
+        width: 100%;
+        top: -100%;
+        left: 0;
+        height: 100%;
+        background-color: black;
+        opacity: 0.75;
+    }
+
+    #navigation > li:first-child{
+        display: none;
+    }
+
+    #navigation > li{
+        height: 100px;
+        float: none;
+        width: 100px;
+        margin: 0 auto;
+        user-focus: none;
+    }
+    #navigation > li:first-child{
+        margin-top: 50px;
+    }
+
+    .list_item_border{
+        display: none;
+    }
+    #nav_item_menu:hover #nav_item_menu_list{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 100%;
+    }
+
+    #logo{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        pointer-events: none;
+    }
+    #navigation{
+        float: none;
+    }
+
+    .next, .previous{
+        display: none;
+    }
+    #menu_open{
+        display: inline-block;
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        font-size: 2em;
+    }
+    #menu_close{
+        display: inline-block;
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        font-size: 2em;
+    }
+    #navigation > li:nth-child(3) {
+        margin-top: 100px;
+
+    }
+    #modal_views > div:first-child > div{
+        height: 100%;
+        background: url("../img/d/cola.jpg") center no-repeat;
+        background-size: 60%;
+    }
+
+    #modal_views > div:nth-of-type(2)> div{
+        height: 100%;
+        background: url("../img/d/sprite.jpg") center no-repeat;
+        background-size: 80%;
+    }
+
+    #modal_views > div:nth-of-type(3)> div{
+        height: 100%;
+        background: url("../img/d/pepper.jpg") center no-repeat;
+        background-size: 70%;
+    }
+    #modal_views > div:nth-of-type(4)> div{
+        height: 100%;
+        background: url("../img/d/mountain.jpg") center no-repeat;
+        background-size: 80%;
+    }
+
+    #modal_views > div:nth-of-type(5)> div{
+        height: 100%;
+        background: url("../img/d/mirinda.jpg") center no-repeat;
+        background-size: 80%;
+    }
+
+    #modal_views > div:last-child > div{
+        height: 100%;
+        background: url("../img/d/fanta.jpg") center no-repeat;
+        background-size: 80%;
+    }
+}

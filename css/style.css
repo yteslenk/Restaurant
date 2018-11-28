@@ -1,0 +1,742 @@
+body, html, * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    background-color: #f7f6f5;
+    font-family: "Indie Flower", cursive;
+    color: white;
+    font-size: 16px;
+}
+
+header{
+    height: 100%;
+    width: 100%;
+}
+
+#logo{
+    height: 100%;
+    float: left;
+    user-select: none;
+    font-size: 2em;
+    padding: 25px 75px;
+    color: #f6cf32;
+}
+
+#menu_wrapper{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#navigation{
+    float: right;
+    padding: 30px 0;
+    height: 125px;
+    text-align: center;
+    list-style-type: none;
+
+}
+
+#navigation > li{
+    width: 200px;
+    float: left;
+}
+
+#navigation a {
+    text-decoration: none;
+    color: #f6cf32;
+}
+
+#navigation em{
+    display: block;
+    color: white;
+}
+
+#nav_item_menu{
+    position: relative;
+}
+
+#nav_item_menu_list{
+    width: 100%;
+    display: none;
+}
+
+#nav_item_menu:hover #nav_item_menu_list{
+    display: block;
+    position: absolute;
+    top: 100%;
+}
+
+#nav_item_menu:hover #nav_item_menu_list li{
+    width: 100%;
+    padding: 10px;
+    list-style-type: none;
+}
+
+#nav_item_menu_list li:hover a{
+    color: white;
+    border: solid white 1px;
+    padding: 7px;
+    transition: all 0.5s;
+}
+
+#navigation .list_item_border{
+    height: 50%;
+    width: 1px;
+    background-color: white;
+}
+
+/*==========CAROUSEL==========*/
+
+#carousel {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#slidesWrapper {
+    width: 9999px;
+    height: 100%;
+}
+
+
+#slidesWrapper > div{
+    float: left;
+}
+
+#slidesWrapper > div:first-child{
+    background: url("../img/interior.jpeg") no-repeat center;
+    background-size: cover;
+}
+
+#slidesWrapper > div:nth-child(2){
+    background: url("../img/interior2.jpeg") no-repeat center;
+    background-size: cover;
+}
+#slidesWrapper > div:last-child{
+    background: url("../img/interior3.jpeg") no-repeat center;
+    background-size: cover;
+}
+
+
+
+
+
+.arrows{
+    font-family: "Kirang Haerang", cursive;
+    text-align: center;
+    width: 35px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    font-size: 3em;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none;
+    background-color: #f6cf32;
+    opacity: 0.2;
+}
+
+.arrows:hover{
+    background-color: #f6cf32;
+    transition: all 1s;
+    opacity: 1;
+}
+
+.next{
+    right: 2.5%;
+}
+
+.previous {
+    left: 2.5%;
+}
+
+.dots_wrapper{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dots_wrapper > span:not(:first-child){
+    margin-left: 5px;
+}
+
+.dots {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    float: left;
+    background-color: white;
+    cursor: pointer;
+}
+
+.active {
+    background-color: #f6cf32;
+}
+
+/*==========CONTENT==========*/
+.content{
+    width: 100%;
+    height: 100%;
+    /*max-height: 750px;*/
+    /*overflow: scroll;*/
+    text-align: center;
+    color: black;
+    font-family: "Indie Flower", cursive;
+}
+
+#burger {
+    height: 100%;
+    width: 100%;
+}
+
+#burger > h3{
+    padding-top: 20px;
+    font-family: "Kirang Haerang", cursive;
+    font-size: 3em;
+}
+
+#burger > div{
+    display: flex;
+    text-align: center;
+}
+
+
+#burger > div > div:last-child{
+    width: 50%;
+    font-size: 1.2em;
+}
+
+#burger > div> div:last-child h4{
+    font-weight: bold;
+    font-size: 1.5em;
+    font-family: "Kirang Haerang", cursive;
+}
+
+#burger > div > div:first-child{
+    background: no-repeat center;
+    width: 50%;
+    height: 50%;
+    min-height: 300px;
+    margin: 0;
+}
+
+#burger > div:not(:nth-of-type(1)), #dessert > div:not(:nth-of-type(1)){
+    margin-top: 20px;
+}
+
+#burger > div > div:last-child span{
+    font-size: 1.2em;
+    background-color: #f6cf32;
+}
+
+#burger > p{
+    text-align: right;
+}
+
+#burger > p > span{
+    font-size: 1.5em;
+    padding: 10px 15px;
+    line-height: 25px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+#burger > p > span:hover{
+    background-color: #f6cf32;
+}
+
+#dessert {
+    width: 100%;
+    height: 100%;
+}
+
+#dessert > h3{
+    padding-top: 20px;
+    font-family: "Kirang Haerang", cursive;
+    font-size: 3em;
+}
+
+#dessert > div > div:first-child{
+    background: no-repeat center;
+    width: 50%;
+    height: 50%;
+    min-height: 300px;
+    overflow: hidden;
+    margin: 0;
+}
+
+#dessert > div> div:last-child h4{
+    font-weight: bold;
+    font-size: 1.5em;
+    font-family: "Kirang Haerang", cursive;
+}
+
+#dessert > div > div:last-child span{
+    font-size: 1.2em;
+    background-color: #f6cf32;
+}
+
+#dessert > div > div:last-child{
+    width: 50%;
+    font-size: 1.2em;
+}
+
+#dessert > div{
+    display: flex;
+    text-align: center;
+}
+
+#dessert > p {
+    text-align: right;
+}
+
+#dessert > p > span{
+    font-size: 1.5em;
+    padding: 10px 15px;
+    line-height: 25px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+#dessert > p > span:hover{
+    background-color: #f6cf32;
+}
+
+
+
+#drink{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#drink > h3{
+    padding-top: 20px;
+    font-family: "Kirang Haerang", cursive;
+    font-size: 3em;
+}
+
+#drinks_wrapper{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+
+#drinks_wrapper > div{
+    cursor: pointer;
+    height: 300px;
+    width: 300px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+#drinks_wrapper img {
+    height: 100%;
+}
+
+#modal_views{
+    width: 100%;
+}
+
+#modal_views > div{
+    display: none;
+}
+
+#modal_views > div:first-child > div{
+    height: 100%;
+    background: url("../img/d/cola.jpg") center no-repeat;
+    background-size: 30%;
+}
+
+#modal_views > div:nth-of-type(2)> div{
+    height: 100%;
+    background: url("../img/d/sprite.jpg") center no-repeat;
+    background-size: 50%;
+}
+
+#modal_views > div:nth-of-type(3)> div{
+    height: 100%;
+    background: url("../img/d/pepper.jpg") center no-repeat;
+    background-size: 30%;
+}
+#modal_views > div:nth-of-type(4)> div{
+    height: 100%;
+    background: url("../img/d/mountain.jpg") center no-repeat;
+    background-size: 50%;
+}
+
+#modal_views > div:nth-of-type(5)> div{
+    height: 100%;
+    background: url("../img/d/mirinda.jpg") center no-repeat;
+    background-size: 50%;
+}
+
+#modal_views > div:last-child > div{
+    height: 100%;
+    background: url("../img/d/fanta.jpg") center no-repeat;
+    background-size: 40%;
+}
+
+
+#modal_views > .show_block{
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: lightgray;
+    opacity: 0.95;
+}
+
+.drinks_cross{
+    float: right;
+    cursor: pointer;
+    font-size: 2em;
+    position: relative;
+    top: 25px;
+    right: 5%;
+}
+
+/*==========FOOTER==========*/
+
+footer{
+    width: 100%;
+    height: 400px;
+}
+
+footer > iframe{
+    width: 100%;
+    height: 100%;
+}
+
+footer {
+    width: 100%;
+    display: flex;
+    font-family: "Kirang Haerang", cursive;
+    background-color: #f7f6f5;
+    margin-top: 20px;
+    text-align: center;
+    color:  black
+
+}
+
+footer > iframe{
+    width: 50%;
+    margin-left: 27px;
+}
+
+footer > div{
+    width: 50%;
+}
+
+footer > div > h3{
+    font-size: 3em;
+    text-transform: uppercase;
+    padding-top: 20px;
+}
+
+footer > div > p{
+    padding-top: 20px;
+    font-size: 1.5em;
+}
+footer > div > a > i{
+    color: black;
+    font-size: 2em;
+    padding: 30px 10px 0;
+}
+
+/*==========RESERVATION==========*/
+
+#reservation{
+    width: 100%;
+}
+
+#tables{
+    width: 100%;
+}
+
+
+#tables > div:first-child{
+    width: 100%;
+    height: 50px;
+}
+
+#tables > div:first-child > p{
+    font-family: "Kirang Haerang", cursive;
+    font-size: 3em;
+    width: 100%;
+    color: black;
+    text-align: center;
+}
+
+
+#tables > div{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+
+.tableSixWrapper > div{
+    display: flex;
+    width: 200px;
+    height: 100px;
+    margin-top: 50px;
+    background-color: lightgray;
+}
+
+.tableThreeFourWrapper > div{
+    display: flex;
+    width: 100px;
+    height: 100px;
+    background-color: lightgray;
+    margin-top: 50px;
+}
+
+.chairs{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #f6cf32;
+}
+
+.tableSixWrapper > div{
+    text-align: center;
+    color: black;
+    position: relative;
+    cursor: pointer;
+}
+
+.tableSixWrapper > div > div:first-child{
+    left: 10px;
+    top: -15px;
+}
+
+.tableSixWrapper > div > div:nth-child(2){
+    left: 50%;
+    transform: translateX(-50%);
+    top: -15px;
+}
+
+.tableSixWrapper > div > div:nth-child(3){
+    right: 10px;
+    top: -15px;
+}
+
+.tableSixWrapper > div > div:nth-child(4){
+    bottom: -15px;
+    left: 10px;
+}
+
+.tableSixWrapper > div > div:nth-child(5){
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tableSixWrapper > div > div:nth-child(6){
+    bottom: -15px;
+    right: 10px;
+}
+
+.tableThreeFourWrapper > div {
+    cursor: pointer;
+    position: relative;
+}
+
+.tableThreeFourWrapper > div:not(:nth-child(2)) > div:first-child{
+    left: 50%;
+    transform: translateX(-50%);
+    top: -15px;
+}
+
+.tableThreeFourWrapper > div:not(:nth-child(2)) > div:nth-child(3){
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tableThreeFourWrapper > div:first-child > div:nth-child(2){
+    top: 50%;
+    transform: translateY(-50%);
+    right: -15px;
+}
+
+.tableThreeFourWrapper > div:nth-child(2) > div:first-child{
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.tableThreeFourWrapper > div:nth-child(2) > div:nth-child(2){
+    top: 50%;
+    transform: translateY(-50%);
+    right: -15px;
+}
+
+.tableThreeFourWrapper > div:nth-child(2) > div:nth-child(3){
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tableThreeFourWrapper > div:nth-child(2) > div:nth-child(4){
+    top: 50%;
+    transform: translateY(-50%);
+    left: -15px;
+}
+
+.tableThreeFourWrapper > div:last-child > div:nth-child(2){
+    top: 50%;
+    transform: translateY(-50%);
+    left: -15px;
+}
+
+.tableThreeFourWrapper > div > p{
+    width: 100%;
+    color: black;
+    text-align: center;
+    position: relative;
+    padding: 10px 0;
+    font-size: 1.4em;
+    font-family: "Kirang Haerang", cursive;
+}
+
+.tableSixWrapper > div > p{
+    width: 100%;
+    color: black;
+    text-align: center;
+    position: relative;
+    padding: 10px;
+    font-size: 1.4em;
+    font-family: "Kirang Haerang", cursive;
+}
+
+#reservation{
+    padding: 30px;
+}
+
+#reservationDate {
+    font-family: "Kirang Haerang",cursive;
+    outline: none;
+    font-size: 1em;
+    background-color: #f7f6f5;
+    border: black 1px solid;
+    border-radius: 5px;
+    text-align: center;
+    height: 30px;
+}
+
+#reservationTime {
+    font-family: "Kirang Haerang",cursive;
+    width: 70px;
+    padding: 5px;
+    font-size: 1em;
+    display: inline-block;
+    border: black 1px solid;
+    height: 30px;
+}
+
+#submitReservationButton{
+    border: black 1px solid;
+    font-family: "Kirang Haerang", cursive;
+    font-size: 1.2em;
+    padding: 0 10px;
+    height: 30px;
+    cursor: pointer;
+    background-color: #f7f6f5;
+    border-radius: 5px;
+    position: relative;
+    top: 1px;
+    outline: none;
+}
+
+#submitReservationButton:hover{
+    background-color: #f6cf32;
+}
+
+#reservation > h3{
+    color: black;
+    text-align: center;
+    font-size: 3em;
+    text-transform: uppercase;
+    font-family: "Kirang Haerang", cursive;
+}
+
+.tableSixWrapper  .colors, .tableThreeFourWrapper .colors{
+    background: darkred;
+}
+
+#reserves{
+    width: 100%;
+    color: black;
+}
+
+#resWrapper{
+    width: 100%;
+    display: flex;
+}
+
+#resWrapper > div:first-child{
+    width: 60%;
+}
+
+#resWrapper > div:last-child{
+    width: 40%;
+}
+
+#resWrapper > div:last-child > p{
+    width: 100%;
+    font-size: 2em;
+    font-family: "Kirang Haerang",cursive;
+    text-align: center;
+}
+
+
+.reserve_cross{
+    float: right;
+    padding: 5px 0 0;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.reserve_cross:hover{
+    color: darkred;
+}
+
+
+/*==========DROP DOWN MOBILE VERSION==========*/
+
+.rollDown{
+    top: 0;
+    transition: all 1s;
+}
+
+.rollUp{
+    top: -100%;
+    transition: all 1s;
+}
+
+#menu_close {
+    display: none;
+}
+
+#menu_open{
+    display: none;
+}
